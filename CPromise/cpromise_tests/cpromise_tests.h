@@ -14,11 +14,11 @@ extern "C" {
 
 
 
-	void test_Execute_CPromise_Suite();
+	void test_Execute_CPromise_Suite(void);
 
-	void test_CanInitializeAndDisposePromiseManager();
-	void test_CanProcessWithEmptyList();
-	void test_CanAddAPromise();
+	void test_CanInitializeAndDisposePromiseManager(void);
+	void test_CanProcessWithEmptyList(void);
+	void test_CanAddAPromise(void);
 
 	///////////////////////////////////////////////////////////
 	typedef struct test_CanProcessAPromise_State {
@@ -26,7 +26,7 @@ extern "C" {
 	}test_CanProcessAPromise_State;
 	PromiseState test_CanProcessAPromise_Process(void* _state);
 	void test_CanProcessAPromise_Dispose(void* _state);
-	void test_CanProcessAPromise();
+	void test_CanProcessAPromise(void);
 
 	///////////////////////////////////////////////////////////
 	typedef struct test_CanResolveAPromise_State {
@@ -36,7 +36,7 @@ extern "C" {
 	PromiseState test_CanResolveAPromise_Process(void* _state);
 	void test_CanResolveAPromise_Resolve(void* _state);
 	void test_CanResolveAPromise_Dispose(void* _state);
-	void test_CanResolveAPromise();
+	void test_CanResolveAPromise(void);
 
 	///////////////////////////////////////////////////////////
 	typedef struct test_CanRejectAPromise_State {
@@ -48,7 +48,7 @@ extern "C" {
 	void test_CanRejectAPromise_Resolve(void* _state);
 	void test_CanRejectAPromise_Reject(void* _state);
 	void test_CanRejectAPromise_Dispose(void* _state);
-	void test_CanRejectAPromise();
+	void test_CanRejectAPromise(void);
 
 	///////////////////////////////////////////////////////////
 	typedef struct test_CanDisposeAPromiseAfterRejected_State {
@@ -61,7 +61,7 @@ extern "C" {
 	void test_CanDisposeAPromiseAfterRejected_Resolve(void* _state);
 	void test_CanDisposeAPromiseAfterRejected_Reject(void* _state);
 	void test_CanDisposeAPromiseAfterRejected_Dispose(void* _state);
-	void test_CanDisposeAPromiseAfterRejected();
+	void test_CanDisposeAPromiseAfterRejected(void);
 
 	///////////////////////////////////////////////////////////
 	typedef struct test_CanDisposeAPromiseAfterResolved_State {
@@ -74,7 +74,7 @@ extern "C" {
 	void test_CanDisposeAPromiseAfterResolved_Resolve(void* _state);
 	void test_CanDisposeAPromiseAfterResolved_Reject(void* _state);
 	void test_CanDisposeAPromiseAfterResolved_Dispose(void* _state);
-	void test_CanDisposeAPromiseAfterResolved();
+	void test_CanDisposeAPromiseAfterResolved(void);
 
 
 #ifdef __cplusplus

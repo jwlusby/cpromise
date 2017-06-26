@@ -9,7 +9,7 @@
 extern "C" {
 #endif
 
-	void test_Execute_CPromise_Suite() {
+	void test_Execute_CPromise_Suite(void) {
 		test_CanInitializeAndDisposePromiseManager();
 		test_CanProcessWithEmptyList();
 		test_CanAddAPromise();
@@ -22,7 +22,7 @@ extern "C" {
 
 	///////////////////////////////////////////////
 	//<test_CanInitializeAndDisposePromiseManager>
-	void test_CanInitializeAndDisposePromiseManager() {
+	void test_CanInitializeAndDisposePromiseManager(void) {
 		PromiseManager* promiseManager = PromiseManager_New();
 		promiseManager->Dispose(promiseManager);
 
@@ -33,7 +33,7 @@ extern "C" {
 
 	///////////////////////////////////////////////
 	//<test_CanProcessWithEmptyList>
-	void test_CanProcessWithEmptyList() {
+	void test_CanProcessWithEmptyList(void) {
 		PromiseManager* promiseManager = PromiseManager_New();
 		promiseManager->Process(promiseManager);
 		promiseManager->Dispose(promiseManager);
@@ -45,7 +45,7 @@ extern "C" {
 
 	///////////////////////////////////////////////
 	//<test_CanAddAPromise>
-	void test_CanAddAPromise() {
+	void test_CanAddAPromise(void) {
 		PromiseManager* promiseManager = PromiseManager_New();
 		promiseManager->AddPromise(promiseManager, NULL, NULL, NULL, NULL, NULL);
 		promiseManager->Dispose(promiseManager);
@@ -66,6 +66,7 @@ extern "C" {
 		else {
 			state->count++;
 		}
+		return PENDING;
 	}
 
 	void test_CanProcessAPromise_Dispose(void* _state) {
@@ -73,7 +74,7 @@ extern "C" {
 		free(state);
 	}
 
-	void test_CanProcessAPromise() {
+	void test_CanProcessAPromise(void) {
 		PromiseManager* promiseManager = PromiseManager_New();
 		struct test_CanProcessAPromise_State* state = (struct test_CanProcessAPromise_State*)malloc(sizeof(test_CanProcessAPromise_State));
 		state->count = 0;
@@ -99,6 +100,7 @@ extern "C" {
 		else {
 			state->count++;
 		}
+		return PENDING;
 	}
 
 	void test_CanResolveAPromise_Resolve(void* _state) {
@@ -112,7 +114,7 @@ extern "C" {
 		free(state);
 	}
 
-	void test_CanResolveAPromise() {
+	void test_CanResolveAPromise(void) {
 		bool success = false;
 		PromiseManager* promiseManager = PromiseManager_New();
 		struct test_CanResolveAPromise_State* state = (struct test_CanResolveAPromise_State*)malloc(sizeof(test_CanResolveAPromise_State));
@@ -147,6 +149,7 @@ extern "C" {
 		else {
 			state->count++;
 		}
+		return PENDING;
 	}
 
 	void test_CanRejectAPromise_Resolve(void* _state) {
@@ -166,7 +169,7 @@ extern "C" {
 		free(state);
 	}
 
-	void test_CanRejectAPromise() {
+	void test_CanRejectAPromise(void) {
 		bool resolveCalled = false;
 		bool rejectCalled = false;
 		PromiseManager* promiseManager = PromiseManager_New();
@@ -203,6 +206,7 @@ extern "C" {
 		else {
 			state->count++;
 		}
+		return PENDING;
 	}
 
 	void test_CanDisposeAPromiseAfterRejected_Resolve(void* _state) {
@@ -223,7 +227,7 @@ extern "C" {
 		return;
 	}
 
-	void test_CanDisposeAPromiseAfterRejected() {
+	void test_CanDisposeAPromiseAfterRejected(void) {
 		bool resolveCalled = false;
 		bool rejectCalled = false;
 		bool disposeCalled = false;
@@ -262,6 +266,7 @@ extern "C" {
 		else {
 			state->count++;
 		}
+		return PENDING;
 	}
 
 	void test_CanDisposeAPromiseAfterResolved_Resolve(void* _state) {
@@ -283,7 +288,7 @@ extern "C" {
 		return;
 	}
 
-	void test_CanDisposeAPromiseAfterResolved() {
+	void test_CanDisposeAPromiseAfterResolved(void) {
 		bool resolveCalled = false;
 		bool rejectCalled = false;
 		bool disposeCalled = false;

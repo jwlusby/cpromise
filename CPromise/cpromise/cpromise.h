@@ -41,7 +41,7 @@ struct _PromiseManager {
 void PromiseManager_Dispose(struct _PromiseManager* self);
 void PromiseManager_AddPromise(struct _PromiseManager* self, void* state, PromiseState(*PendingHandler)(void* state), void(*ResolveHandler)(void* state), void(*RejectHandler)(void* state), void(*DisposeHandler)(void* state));
 void PromiseManager_Process(struct _PromiseManager* self);
-struct _PromiseManager* PromiseManager_New();
+struct _PromiseManager* PromiseManager_New(void);
 
 #ifdef __cplusplus
 }
