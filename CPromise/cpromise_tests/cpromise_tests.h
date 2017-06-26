@@ -14,6 +14,7 @@ extern "C" {
 
 
 
+	void test_Execute_CPromise_Suite();
 
 	void test_CanInitializeAndDisposePromiseManager();
 	void test_CanProcessWithEmptyList();

@@ -51,7 +51,7 @@ extern "C" {
 		}
 	}
 
-	void PromiseManager_AddPromise(struct _PromiseManager* self, void* state, int(*PendingHandler)(void* state), void(*ResolveHandler)(void* state), void(*RejectHandler)(void* state), void(*DisposeHandler)(void* state))
+	void PromiseManager_AddPromise(struct _PromiseManager* self, void* state, PromiseState(*PendingHandler)(void* state), void(*ResolveHandler)(void* state), void(*RejectHandler)(void* state), void(*DisposeHandler)(void* state))
 	{
 		struct PromiseEntry* item = (PromiseEntry*)malloc(sizeof(PromiseEntry));
 		item->PendingHandler = PendingHandler;

@@ -7,14 +7,7 @@
 
 int main()
 {
-	test_CanInitializeAndDisposePromiseManager();
-	test_CanProcessWithEmptyList();
-	test_CanAddAPromise();
-	test_CanProcessAPromise();
-	test_CanResolveAPromise();
-	test_CanRejectAPromise();
-	test_CanDisposeAPromiseAfterRejected();
-	test_CanDisposeAPromiseAfterResolved();
+	test_Execute_CPromise_Suite();
 
 	while (true);
 	return 0;
